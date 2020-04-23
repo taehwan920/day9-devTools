@@ -19,29 +19,60 @@
             p.style.fontSize = '50px';
         }
 
-    // Regular
+        // Regular
+        console.log('hello');
 
-    // Interpolated
+        // Interpolated
+        console.log("hello i am a %s string", "☢");
+        // Styled
+        // console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
 
-    // Styled
+        // warning!
+        console.warn("OH NOOO");
 
-    // warning!
+        // Error :|
+        console.error("Shit");
 
-    // Error :|
+        // Info
+        console.info("I'm info");
 
-    // Info
+        // Testing => 앞의 거가 false면 메시지 출력
+        const p = document.querySelector('p');
 
-    // Testing
+        console.assert(p.classList.contains('ouch'), 'that is wrong!')
 
-    // clearing
+        // clearing
+        console.clear();
 
-    // Viewing DOM Elements
+        // Viewing DOM Elements
+        console.log(p);
+        console.dir(p);
 
-    // Grouping together
+        // Grouping together
+        dogs.forEach(dog => {
+            console.group(`${dog.name}`);
+            console.log(`This is ${dog.name}`);
+            console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+            console.groupEnd();
+        })
 
-    // counting
+        // counting
+        console.count('Wes');
+        console.count('Wes');
+        console.count('Wes');
+        console.count('Wes');
+        console.count('Wes');
 
-    // timing
+        // timing
+        console.time('fetching data');
+        fetch('https://api.github.com/users/wesbos')
+            .then(data => data.json())
+            .then(data => {
+                console.timeEnd('fetching data');
+                console.log(data);
+            });
+
+        console.table(dogs);
 
     </script>
 </body>
